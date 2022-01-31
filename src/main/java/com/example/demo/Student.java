@@ -42,4 +42,10 @@ public class Student {
     private String email;
     @Column(name = "age", nullable = false)
     private Integer age;
+    @ToString.Exclude
+    @OneToOne(
+            mappedBy = "student",
+            orphanRemoval = true
+    )
+    private StudentIdCard studentIdCard;
 }
